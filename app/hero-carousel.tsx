@@ -6,12 +6,12 @@ import './hero-carousel.css';
 const slides=[
  {name:'Frieren',label:'Beyond Journey’s End',image:'/media/frieren.webp',href:'#projets',project:1},
  {name:'Riot MMO',label:'Cinematic Web Experience',image:'/media/riot.webp',href:'#projets',project:2},
- {name:'Mad Makers',label:'Mon univers créatif',image:'/media/mad-makers.webp',href:'https://www.mad-makers.fr',project:null},
+ {name:'Mad Makers',label:'Mon univers créatif',image:'/media/mad-makers-current.png',href:'https://www.mad-makers.fr',project:null},
 ];
 export default function HeroCarousel({quiet,onProject}:{quiet:boolean;onProject:(index:number)=>void}){
  const [active,setActive]=useState(0);
  const [drag,setDrag]=useState(0);
- const [playing,setPlaying]=useState(false);
+ const [playing,setPlaying]=useState(true);
  const [hovering,setHovering]=useState(false);
  const [focused,setFocused]=useState(false);
  const [visible,setVisible]=useState(true);
@@ -21,7 +21,7 @@ export default function HeroCarousel({quiet,onProject}:{quiet:boolean;onProject:
  const pointer=useRef<{x:number;y:number}|null>(null);
  const swiped=useRef(false);
  const manual=quiet||reduced;
- const rotating=playing&&!manual&&!hovering&&!focused&&visible&&!hidden;
+ const rotating=playing&&!manual&&!hovering&&!focused&&visible&&!hidden&&drag===0;
  useEffect(()=>{
    const media=window.matchMedia('(prefers-reduced-motion: reduce)');
    const sync=()=>setReduced(media.matches);sync();media.addEventListener('change',sync);
@@ -31,7 +31,7 @@ export default function HeroCarousel({quiet,onProject}:{quiet:boolean;onProject:
    return()=>{media.removeEventListener('change',sync);document.removeEventListener('visibilitychange',visibility);observer.disconnect()};
  },[]);
  useEffect(()=>{if(!rotating)return;const timer=window.setInterval(()=>setActive(i=>(i+1)%slides.length),5500);return()=>window.clearInterval(timer)},[rotating]);
- function select(index:number){setActive((index+slides.length)%slides.length);setPlaying(false)}
+ function select(index:number){setActive((index+slides.length)%slides.length);setPlaying(true)}
  return <div ref={region} className="hero-carousel" role="region" aria-roledescription="carrousel" aria-label="Mes créations web" onMouseEnter={()=>setHovering(true)} onMouseLeave={()=>setHovering(false)} onFocusCapture={()=>setFocused(true)} onBlurCapture={e=>{if(!e.currentTarget.contains(e.relatedTarget))setFocused(false)}} onKeyDown={e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();select(active+(e.key==='ArrowLeft'?-1:1))}}}>
   <div className={`carousel-stage${drag!==0?' dragging':''}`} style={{translate:`${drag}px 0`}} onPointerDown={e=>{if(e.button!==0)return;pointer.current={x:e.clientX,y:e.clientY};swiped.current=false}} onPointerMove={e=>{if(!pointer.current)return;const dx=e.clientX-pointer.current.x,dy=e.clientY-pointer.current.y;if(Math.abs(dx)>8&&Math.abs(dx)>Math.abs(dy)*1.2){swiped.current=true;e.currentTarget.setPointerCapture(e.pointerId);setDrag(dx)}}} onPointerCancel={()=>{pointer.current=null;setDrag(0)}} onPointerUp={e=>{const start=pointer.current;pointer.current=null;setDrag(0);if(e.currentTarget.hasPointerCapture(e.pointerId))e.currentTarget.releasePointerCapture(e.pointerId);if(!start)return;const dx=e.clientX-start.x,dy=e.clientY-start.y;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.2){swiped.current=true;select(active+(dx<0?1:-1))}}}>
    {slides.map((slide,index)=>{
@@ -46,6 +46,7 @@ export default function HeroCarousel({quiet,onProject}:{quiet:boolean;onProject:
   <p className="carousel-caption" aria-live={rotating?'off':'polite'} aria-atomic="true"><span>{String(active+1).padStart(2,'0')} / 03</span> {slides[active].name} <span>·</span> {slides[active].label}</p>
  </div>;
 }
+
 
 
 
