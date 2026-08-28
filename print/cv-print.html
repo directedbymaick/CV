@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<title>CV Rayan Mpondo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" />
+<style>
+  :root {
+    --void: #0a0e09;
+    --ground: #131712;
+    --carbon: #1a201a;
+    --text: #ddffdc;
+    --lead: #aed2a4;
+    --body: #8cab87;
+    --eyebrow: #9cbf93;
+    --muted: #697368;
+    --line: #2c352a;
+    --line-strong: #485346;
+    --lime: #7fee64;
+    --mint: #def0dd;
+    --display: "Space Grotesk", sans-serif;
+    --sans: "Inter", sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { background: var(--void); }
+  @page { size: A4; margin: 0; }
+  .page {
+    width: 210mm; height: 297mm;
+    background: var(--void);
+    color: var(--text);
+    font-family: var(--sans);
+    padding: 10mm 11mm 8mm;
+    display: flex; flex-direction: column;
+    font-feature-settings: "cv11";
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    overflow: hidden;
+  }
+  .glow {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 130mm 70mm at 75% -5%, #1c3a1633, transparent 70%);
+    pointer-events: none;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  /* ---- top bar ---- */
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-bottom: 4mm; border-bottom: 1px solid var(--line);
+  }
+  .wordmark { font-family: var(--display); font-size: 17pt; font-weight: 600; letter-spacing: -1.5px; line-height: 1; }
+  .wordmark span { color: var(--lime); }
+  .topbar .tagline { font-size: 6.4pt; letter-spacing: 0.22em; color: var(--muted); font-weight: 500; }
+  .cvtag { font-size: 6.4pt; letter-spacing: 0.18em; color: var(--eyebrow); font-weight: 500; border: 1px solid var(--line-strong); border-radius: 999px; padding: 1.6mm 3.4mm; }
+
+  /* ---- header ---- */
+  .header { display: flex; gap: 7mm; align-items: center; padding: 8.5mm 0; }
+  .portrait {
+    width: 27mm; height: 27mm; border-radius: 3mm; object-fit: cover;
+    border: 1px solid var(--line-strong);
+  }
+  .id { flex: 1; }
+  .id .eyebrow { margin-bottom: 1.8mm; }
+  h1 {
+    font-family: var(--display); font-weight: 500; font-size: 27pt; line-height: 0.98;
+    letter-spacing: -0.045em; color: var(--text);
+  }
+  h1 em { font-style: normal; color: var(--lime); }
+  .lede { margin-top: 2.6mm; font-size: 8pt; line-height: 1.5; color: var(--lead); max-width: 118mm; }
+  .header-cta { display: flex; flex-direction: column; gap: 2mm; align-items: flex-end; }
+  .btn-lime {
+    display: inline-block; background: var(--lime); color: #0b1408;
+    font-size: 7pt; font-weight: 600; letter-spacing: 0.02em;
+    border-radius: 999px; padding: 2.4mm 4.6mm;
+  }
+  .btn-ghost {
+    display: inline-block; border: 1px solid var(--line-strong); color: var(--mint);
+    font-size: 7pt; font-weight: 500; border-radius: 999px; padding: 2.2mm 4.4mm;
+    background: var(--ground);
+  }
+
+  /* ---- shared ---- */
+  .eyebrow { font-size: 6.2pt; letter-spacing: 0.2em; color: var(--eyebrow); font-weight: 600; }
+  .section-head {
+    display: flex; align-items: baseline; gap: 2.6mm;
+    padding-bottom: 2.4mm; border-bottom: 1px solid var(--line); margin-bottom: 3.6mm;
+  }
+  .section-head .num { font-family: var(--display); font-size: 7.5pt; color: var(--lime); font-weight: 500; }
+  .section-head .title { font-family: var(--display); font-size: 11pt; font-weight: 500; letter-spacing: -0.02em; color: var(--text); }
+
+  /* ---- main grid ---- */
+  .grid { display: grid; grid-template-columns: 1.42fr 1fr; gap: 9mm; }
+
+  /* experience */
+  .job { padding: 3.6mm 0; border-bottom: 1px solid var(--line); }
+  .job:last-child { border-bottom: 0; }
+  .job-top { display: flex; justify-content: space-between; align-items: baseline; }
+  .job-company { font-family: var(--display); font-size: 9.5pt; font-weight: 500; letter-spacing: -0.015em; color: var(--text); }
+  .job-date { font-size: 6.4pt; letter-spacing: 0.12em; color: var(--muted); font-weight: 500; }
+  .job-role { font-size: 7.2pt; color: var(--lead); font-weight: 500; margin-top: 0.8mm; }
+  .job-desc { font-size: 7.2pt; line-height: 1.45; color: var(--body); margin-top: 1mm; }
+
+  /* creations */
+  .card {
+    border: 1px solid var(--line); border-radius: 2.4mm; overflow: hidden;
+    background: var(--ground); margin-bottom: 3.5mm;
+  }
+  .card img.cover { width: 100%; height: 31mm; object-fit: cover; object-position: top; display: block; }
+  .card .card-body { padding: 3mm 3.6mm 3.4mm; }
+  .card h3 { font-family: var(--display); font-size: 9pt; font-weight: 500; color: var(--text); letter-spacing: -0.01em; }
+  .card p { font-size: 6.8pt; line-height: 1.45; color: var(--body); margin-top: 1mm; }
+  .card .tags { margin-top: 1.6mm; display: flex; flex-wrap: wrap; gap: 1.4mm; }
+  .card .tags span {
+    font-size: 5.8pt; letter-spacing: 0.06em; color: var(--eyebrow);
+    border: 1px solid var(--line-strong); border-radius: 999px; padding: 0.8mm 2.4mm;
+  }
+  .expelled-row { display: flex; gap: 3mm; align-items: stretch; }
+  .expelled-row img { width: 21mm; object-fit: cover; object-position: center 25%; display: block; }
+  .expelled-row .card-body { padding: 3mm 3.6mm 3mm 0; }
+  .stat {
+    display: flex; align-items: baseline; gap: 3mm;
+    border: 1px solid var(--line); border-radius: 2.4mm; padding: 3mm 3.6mm; background: var(--ground);
+  }
+  .stat strong { font-family: var(--display); font-size: 15pt; font-weight: 500; color: var(--lime); letter-spacing: -0.02em; white-space: nowrap; }
+  .stat div { font-size: 6.6pt; line-height: 1.4; color: var(--body); }
+  .stat div b { display: block; font-size: 6.4pt; letter-spacing: 0.14em; color: var(--eyebrow); font-weight: 600; }
+
+  /* bottom grid */
+  .bottom { display: grid; grid-template-columns: 1.42fr 1fr; gap: 9mm; margin-top: 7.5mm; }
+  .skill-line { display: flex; gap: 2.6mm; font-size: 7.2pt; line-height: 1.5; color: var(--body); padding: 1.6mm 0; }
+  .skill-line b { color: var(--mint); font-weight: 600; min-width: 17mm; }
+  .edu { display: flex; gap: 3mm; padding: 2mm 0; font-size: 7.2pt; }
+  .edu .year { color: var(--muted); font-weight: 500; min-width: 12mm; font-size: 6.6pt; letter-spacing: 0.08em; padding-top: 0.3mm; }
+  .edu .what b { color: var(--mint); font-weight: 600; display: block; }
+  .edu .what span { color: var(--body); font-size: 6.8pt; }
+  .cert { padding: 2.2mm 0; border-bottom: 1px solid var(--line); }
+  .cert:last-child { border-bottom: 0; }
+  .cert .code { font-size: 6pt; letter-spacing: 0.1em; color: var(--lime); font-weight: 600; }
+  .cert .name { font-size: 7.2pt; color: var(--mint); font-weight: 500; margin-top: 0.4mm; }
+  .divider-title { margin: 4.6mm 0 2mm; }
+
+  /* footer */
+  .footer {
+    margin-top: auto; padding-top: 3.4mm; border-top: 1px solid var(--line);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer .contact { display: flex; gap: 5mm; font-size: 7pt; color: var(--lead); font-weight: 500; }
+  .footer .contact .sep { color: var(--line-strong); }
+  .footer .links { display: flex; gap: 4mm; font-size: 6.6pt; letter-spacing: 0.08em; color: var(--eyebrow); font-weight: 500; }
+  .footer .links a span { color: var(--lime); }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="glow"></div>
+
+  <div class="topbar">
+    <div class="wordmark">rm<span>.</span></div>
+    <div class="tagline">MARKETING&nbsp;&nbsp;×&nbsp;&nbsp;CRÉATION WEB&nbsp;&nbsp;×&nbsp;&nbsp;IA</div>
+    <div class="cvtag">CV / 2026</div>
+  </div>
+
+  <div class="header">
+    <img class="portrait" src="../public/media/rayan-portrait.webp" alt="" />
+    <div class="id">
+      <div class="eyebrow">MELUN · ÎLE-DE-FRANCE</div>
+      <h1>Rayan Mpondo<em>.</em></h1>
+      <p class="lede">Marketing digital, création web &amp; contenus. Je conçois des sites, produis des contenus et coordonne des projets marketing.</p>
+    </div>
+    <div class="header-cta">
+      <a class="btn-lime" href="https://rayanmpondo.mad-makers.fr">Mon CV en ligne&nbsp;&nbsp;↗</a>
+      <a class="btn-ghost" href="mailto:rayan.mpondo@gmail.com">rayan.mpondo@gmail.com</a>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="col-xp">
+      <div class="section-head"><span class="num">01</span><span class="title">Expérience</span></div>
+
+      <div class="job">
+        <div class="job-top"><span class="job-company">VINCI Construction</span><span class="job-date">DÉC. 2024 — SEPT. 2025</span></div>
+        <div class="job-role">Chargé de marketing digital · Alternance · Nanterre</div>
+        <p class="job-desc">Articles, vidéos et supports de communication. Refonte SharePoint, coordination d’événements et suivi de projets.</p>
+      </div>
+      <div class="job">
+        <div class="job-top"><span class="job-company">BIM&amp;CO</span><span class="job-date">2023 — 2024</span></div>
+        <div class="job-role">Expert Marketing Digital</div>
+        <p class="job-desc">Campagnes HubSpot, gestion WordPress, contenus visuels et vidéos, calendrier éditorial.</p>
+      </div>
+      <div class="job">
+        <div class="job-top"><span class="job-company">Sud Toilettes Sèches</span><span class="job-date">2021 — 2022</span></div>
+        <div class="job-role">Contenu &amp; Business development</div>
+        <p class="job-desc">Création de contenus, community management et prospection LinkedIn.</p>
+      </div>
+      <div class="job">
+        <div class="job-top"><span class="job-company">Ineoprod</span><span class="job-date">2020 — 2021</span></div>
+        <div class="job-role">Contenu &amp; Business development</div>
+        <p class="job-desc">Production visuelle et vidéo, réseaux sociaux et prospection.</p>
+      </div>
+      <div class="job">
+        <div class="job-top"><span class="job-company">Orange Business Services</span><span class="job-date">2016 — 2019</span></div>
+        <div class="job-role">Gestionnaire de portefeuille</div>
+        <p class="job-desc">Gestion multicanale de 10 clients, dont ECF et Fayat ; développement commercial.</p>
+      </div>
+    </div>
+
+    <div class="col-crea">
+      <div class="section-head"><span class="num">02</span><span class="title">Créations</span></div>
+
+      <a class="card" href="https://www.mad-makers.fr" style="display:block">
+        <img class="cover" src="../public/media/mad-makers-current.webp" alt="" />
+        <div class="card-body">
+          <h3>Mad Makers<span style="color:var(--lime)">.</span></h3>
+          <p>Mon activité de création web. Projets personnels : Frieren et Riot&nbsp;MMO.</p>
+          <div class="tags"><span>Sites web</span><span>Direction artistique</span><span>Développement</span></div>
+        </div>
+      </a>
+
+      <a class="card expelled-row" href="https://directedbymaick.github.io" style="display:flex">
+        <img src="../public/media/eshel.webp" alt="" />
+        <div class="card-body">
+          <h3>EXPELLED</h3>
+          <p>Jeu de cartes en ligne. Boosters, collection, monétisation et duel contre l’IA.</p>
+          <div class="tags"><span>Produit</span><span>Illustration IA</span></div>
+        </div>
+      </a>
+
+      <div class="stat">
+        <strong>≈ 2 000</strong>
+        <div><b>ABONNÉS YOUTUBE</b>10–30 k vues sur certaines vidéos · montage After Effects / Premiere Pro</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div>
+      <div class="section-head"><span class="num">03</span><span class="title">Compétences &amp; Formation</span></div>
+      <div class="skill-line"><b>Marketing</b><span>HubSpot, SharePoint, coordination de projets et d’événements.</span></div>
+      <div class="skill-line"><b>Création</b><span>After Effects, Premiere Pro, Suite Adobe, montage vidéo.</span></div>
+      <div class="skill-line"><b>Web &amp; IA</b><span>WordPress, Framer, Three.js, Midjourney, ChatGPT Images.</span></div>
+      <div class="eyebrow divider-title">FORMATION</div>
+      <div class="edu"><span class="year">2025</span><div class="what"><b>Manager de la Stratégie Marketing</b><span>École DSP · Bac+5 · Master ou équivalent</span></div></div>
+      <div class="edu"><span class="year">2026</span><div class="what"><b>Product builder no-code · Framer</b><span>RNCP39108BC02</span></div></div>
+      <div class="edu"><span class="year">2020–21</span><div class="what"><b>Bachelor Stratégies Marketing</b><span>Césame Sup</span></div></div>
+    </div>
+    <div>
+      <div class="section-head"><span class="num">04</span><span class="title">Certifications IA</span></div>
+      <div class="cert"><div class="code">RNCP36129</div><div class="name">Chef de projet en intelligence artificielle</div></div>
+      <div class="cert"><div class="code">RNCP37827</div><div class="name">Développeur en intelligence artificielle</div></div>
+      <div class="cert"><div class="code">RS6891 · CERTIF’IAG</div><div class="name">Contenus multimédias &amp; IA responsable</div></div>
+      <div class="cert"><div class="code">RS6776</div><div class="name">Création rédactionnelle &amp; visuelle avec l’IA</div></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="contact">
+      <a href="mailto:rayan.mpondo@gmail.com">rayan.mpondo@gmail.com</a>
+      <span class="sep">·</span>
+      <a href="tel:+33766039808">07 66 03 98 08</a>
+    </div>
+    <div class="links">
+      <a href="https://rayanmpondo.mad-makers.fr">rayanmpondo.mad-makers.fr <span>↗</span></a>
+      <a href="https://www.mad-makers.fr">Portfolio <span>↗</span></a>
+      <a href="https://www.linkedin.com/in/rayan-m-3a8ba6145/">LinkedIn <span>↗</span></a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
