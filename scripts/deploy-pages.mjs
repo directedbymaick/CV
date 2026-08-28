@@ -8,8 +8,8 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const ORIGIN = "https://cv.mad-makers.fr";
-const CNAME = "cv.mad-makers.fr";
+const ORIGIN = "https://rayanmpondo.mad-makers.fr";
+const CNAME = "rayanmpondo.mad-makers.fr";
 const REPO = "https://github.com/directedbymaick/CV.git";
 const PORT = 4732;
 const root = fileURLToPath(new URL("..", import.meta.url));
