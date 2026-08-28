@@ -1,18 +1,166 @@
-export const projects=[
- {id:'expelled',number:'01',title:'EXPELLED',subtitle:'Un univers. Un jeu. Un produit complet.',category:'JEU DE CARTES EN LIGNE',url:'https://directedbymaick.github.io',tags:['Conception produit','Développement web','Illustration IA'],description:'Du premier tirage au duel : j’ai créé un jeu de cartes avec boosters, collection, espace utilisateur, monétisation et arène joueur contre IA.',proof:'Une expérience pensée dans son ensemble : découverte, progression et engagement.',note:'Illustrations créées avec Midjourney et ChatGPT Images 2.',features:['Boosters & tirages','Collection personnelle','Espace utilisateur','Monétisation','Arène contre IA'],image:null},
- {id:'frieren',number:'02',title:'Frieren',subtitle:'Le web, comme un voyage.',category:'EXPÉRIENCE WEB IMMERSIVE',url:'https://frierenconcept.netlify.app',tags:['Direction artistique','Interactions','Développement'],description:'Une expérience éditoriale et interactive autour de Beyond Journey’s End. Animations, vidéo et composition visuelle donnent un rythme au récit.',proof:'Créer une identité cohérente, puis la traduire en une expérience que l’on explore.',note:'Concept personnel non officiel. Aucun lien commercial avec les ayants droit.',features:['Storytelling visuel','Animations au défilement','Interactions','Vidéo intégrée'],image:'/media/frieren.webp'},
- {id:'riot',number:'03',title:'Riot MMO',subtitle:'Une interface à l’échelle d’un univers.',category:'CONCEPT WEB CINÉMATIQUE',url:'https://riot-mmo.mad-makers.fr',tags:['Direction artistique','Three.js / WebGL','Motion'],description:'Une exploration de Runeterra entre mise en scène cinématique, navigation immersive et carte 3D. Un concept qui mêle narration et développement créatif.',proof:'Passer d’une intention visuelle à une interface riche, structurée et interactive.',note:'Concept personnel non officiel. Projet indépendant de Riot Games.',features:['Carte 3D','Univers & régions','Motion design','Navigation immersive'],image:'/media/riot.webp'},
+export const projects = [
+  {
+    id: "expelled",
+    number: "01",
+    title: "EXPELLED",
+    subtitle: "Un jeu de cartes en ligne.",
+    category: "JEU DE CARTES EN LIGNE",
+    url: "https://directedbymaick.github.io",
+    tags: ["Conception produit", "Développement web", "Illustration IA"],
+    description:
+      "Un jeu de cartes avec boosters, collection personnelle, espace utilisateur, monétisation et arène joueur contre IA.",
+    proof:
+      "Conception du produit, développement des fonctionnalités et création des illustrations avec des outils d’IA.",
+    note: "Illustrations créées avec Midjourney et ChatGPT Images 2.",
+    features: [
+      "Boosters & tirages",
+      "Collection personnelle",
+      "Espace utilisateur",
+      "Monétisation",
+      "Arène contre IA",
+    ],
+    image: null,
+  },
+  {
+    id: "frieren",
+    number: "02",
+    title: "Frieren",
+    subtitle: "Un site consacré à Frieren.",
+    category: "EXPÉRIENCE WEB IMMERSIVE",
+    url: "https://frierenconcept.netlify.app",
+    tags: ["Direction artistique", "Interactions", "Développement"],
+    description:
+      "Un concept de site autour de Beyond Journey’s End, avec animations au défilement, vidéo et navigation interactive.",
+    proof:
+      "Direction artistique, composition des pages et développement des interactions.",
+    note: "Concept personnel non officiel. Aucun lien commercial avec les ayants droit.",
+    features: [
+      "Storytelling visuel",
+      "Animations au défilement",
+      "Interactions",
+      "Vidéo intégrée",
+    ],
+    image: "/media/frieren.webp",
+  },
+  {
+    id: "riot",
+    number: "03",
+    title: "Riot MMO",
+    subtitle: "Un concept web pour Riot MMO.",
+    category: "CONCEPT WEB CINÉMATIQUE",
+    url: "https://riot-mmo.mad-makers.fr",
+    tags: ["Direction artistique", "Three.js / WebGL", "Motion"],
+    description:
+      "Un concept de site pour explorer Runeterra, ses régions et son univers à travers une carte 3D et une navigation immersive.",
+    proof:
+      "Direction artistique, conception de l’interface et développement des interactions avec Three.js / WebGL.",
+    note: "Concept personnel non officiel. Projet indépendant de Riot Games.",
+    features: [
+      "Carte 3D",
+      "Univers & régions",
+      "Motion design",
+      "Navigation immersive",
+    ],
+    image: "/media/riot.webp",
+  },
 ];
-export const jobs=[
- {company:'VINCI Construction',logo:'vinci',logoTone:'light',role:'Chargé de marketing digital',date:'DÉC. 2024 — SEPT. 2025',meta:'Nanterre · Alternance · Hybride',summary:'Des contenus aux événements, faire circuler les idées.',details:['Création d’articles, vidéos, infographies et supports de communication.','Refonte et gestion de l’arborescence SharePoint.','Organisation et coordination de webinaires, conférences et salons.','Gestion de projets avec les équipes internes et les partenaires externes.'],tags:['SharePoint','Communication','Gestion de projet']},
- {company:'BIM&CO',logo:'bim',logoTone:'light',role:'Expert Marketing Digital',date:'2023 — 2024',meta:'Marketing & contenu',summary:'Relier campagnes, CRM et production de contenu.',details:['Lancement et gestion de campagnes marketing avec HubSpot.','Gestion du site et du back-office WordPress.','Création de supports visuels et vidéos ; gestion du calendrier éditorial.'],tags:['HubSpot','WordPress','Contenu']},
- {company:'Sud Toilettes Sèches',logo:'sts',logoTone:'light',role:'Créateur de contenu & Business developer',date:'2021 — 2022',meta:'Communication & développement commercial',summary:'Créer du contenu et développer la prospection.',details:['Production de contenus visuels et vidéos, calendrier éditorial et community management.','Prospection téléphonique et par email.','Campagnes LinkedIn avec Waalaxy et Sales Navigator.'],tags:['Création','Prospection','LinkedIn']},
- {company:'Ineoprod',logo:'ineoprod',logoTone:'dark',role:'Créateur de contenu & Business developer',date:'2020 — 2021',meta:'Communication & développement commercial',summary:'Associer créativité et développement commercial.',details:['Création de supports visuels et vidéos ; community management.','Prospection téléphonique et par email.','Campagnes LinkedIn avec LinkHelper et Sales Navigator.'],tags:['Contenu','Community management']},
- {company:'Orange Business Services',logo:'orange',logoTone:'dark',role:'Gestionnaire de portefeuille',date:'2016 — 2019',meta:'Relation client & développement commercial',summary:'Comprendre les besoins, entretenir la relation.',details:['Gestion multicanale d’un portefeuille de 10 clients, dont ECF et Fayat.','Développement commercial auprès des comptes suivis.','Organisation et réalisation de challenges internes.'],tags:['Relation client','Commercial','Coordination']},
+export const jobs = [
+  {
+    company: "VINCI Construction",
+    logo: "vinci",
+    logoTone: "light",
+    role: "Chargé de marketing digital",
+    date: "DÉC. 2024 — SEPT. 2025",
+    meta: "Nanterre · Alternance · Hybride",
+    summary: "Des contenus aux événements, faire circuler les idées.",
+    details: [
+      "Création d’articles, vidéos, infographies et supports de communication.",
+      "Refonte et gestion de l’arborescence SharePoint.",
+      "Organisation et coordination de webinaires, conférences et salons.",
+      "Gestion de projets avec les équipes internes et les partenaires externes.",
+    ],
+    tags: ["SharePoint", "Communication", "Gestion de projet"],
+  },
+  {
+    company: "BIM&CO",
+    logo: "bim",
+    logoTone: "light",
+    role: "Expert Marketing Digital",
+    date: "2023 — 2024",
+    meta: "Marketing & contenu",
+    summary: "Relier campagnes, CRM et production de contenu.",
+    details: [
+      "Lancement et gestion de campagnes marketing avec HubSpot.",
+      "Gestion du site et du back-office WordPress.",
+      "Création de supports visuels et vidéos ; gestion du calendrier éditorial.",
+    ],
+    tags: ["HubSpot", "WordPress", "Contenu"],
+  },
+  {
+    company: "Sud Toilettes Sèches",
+    logo: "sts",
+    logoTone: "light",
+    role: "Créateur de contenu & Business developer",
+    date: "2021 — 2022",
+    meta: "Communication & développement commercial",
+    summary: "Créer du contenu et développer la prospection.",
+    details: [
+      "Production de contenus visuels et vidéos, calendrier éditorial et community management.",
+      "Prospection téléphonique et par email.",
+      "Campagnes LinkedIn avec Waalaxy et Sales Navigator.",
+    ],
+    tags: ["Création", "Prospection", "LinkedIn"],
+  },
+  {
+    company: "Ineoprod",
+    logo: "ineoprod",
+    logoTone: "dark",
+    role: "Créateur de contenu & Business developer",
+    date: "2020 — 2021",
+    meta: "Communication & développement commercial",
+    summary: "Associer créativité et développement commercial.",
+    details: [
+      "Création de supports visuels et vidéos ; community management.",
+      "Prospection téléphonique et par email.",
+      "Campagnes LinkedIn avec LinkHelper et Sales Navigator.",
+    ],
+    tags: ["Contenu", "Community management"],
+  },
+  {
+    company: "Orange Business Services",
+    logo: "orange",
+    logoTone: "dark",
+    role: "Gestionnaire de portefeuille",
+    date: "2016 — 2019",
+    meta: "Relation client & développement commercial",
+    summary: "Comprendre les besoins, entretenir la relation.",
+    details: [
+      "Gestion multicanale d’un portefeuille de 10 clients, dont ECF et Fayat.",
+      "Développement commercial auprès des comptes suivis.",
+      "Organisation et réalisation de challenges internes.",
+    ],
+    tags: ["Relation client", "Commercial", "Coordination"],
+  },
 ];
-export const certs=[
- ['RNCP36129','Chef de projet en intelligence artificielle','Pilotage de projets et stratégie IA.'],
- ['RNCP37827','Développeur en intelligence artificielle','Développement de solutions d’intelligence artificielle.'],
- ['RS6891 · Certif’IAG','Contenus multimédias & IA responsable','Produire et réviser du contenu professionnel multimédia en utilisant les outils d’IA générative de façon responsable. Certifopac.'],
- ['RS6776','Création rédactionnelle & visuelle avec l’IA','Certification de création de contenu rédactionnel et visuel par l’usage responsable de l’IA générative.'],
+export const certs = [
+  [
+    "RNCP36129",
+    "Chef de projet en intelligence artificielle",
+    "Pilotage de projets et stratégie IA.",
+  ],
+  [
+    "RNCP37827",
+    "Développeur en intelligence artificielle",
+    "Développement de solutions d’intelligence artificielle.",
+  ],
+  [
+    "RS6891 · Certif’IAG",
+    "Contenus multimédias & IA responsable",
+    "Produire et réviser du contenu professionnel multimédia en utilisant les outils d’IA générative de façon responsable. Certifopac.",
+  ],
+  [
+    "RS6776",
+    "Création rédactionnelle & visuelle avec l’IA",
+    "Certification de création de contenu rédactionnel et visuel par l’usage responsable de l’IA générative.",
+  ],
 ];

@@ -1,0 +1,292 @@
+/* A quieter editorial hierarchy. Hero card geometry is intentionally unchanged. */
+.job[data-expanded] .expand {
+  transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.job[data-expanded="false"] .expand {
+  transform: rotate(0);
+}
+.job[data-expanded="true"] .expand {
+  transform: rotate(45deg);
+}
+.quiet .job .expand {
+  transition: none;
+}
+.close-preview {
+  padding: 0;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.close-preview svg {
+  display: block;
+  pointer-events: none;
+}
+:root {
+  --text: #edf1e9;
+  --body: #b3bdb0;
+  --muted: #939f90;
+  --lime: #b3d9a6;
+  --line: #303a2e;
+}
+.hero {
+  padding-top: 70px;
+  background: none;
+}
+.hero h1 {
+  max-width: 1080px;
+  font-size: clamp(38px, 5.4vw, 76px);
+  letter-spacing: -0.045em;
+  line-height: 1.1;
+}
+.hero h1 em:last-child {
+  color: var(--lime);
+}
+.hero-lead {
+  font-size: 16px;
+  line-height: 1.8;
+}
+.hero-identity {
+  letter-spacing: 0.055em;
+  font-size: 10px;
+}
+.hero-actions {
+  margin-top: 28px;
+}
+.hero-bottom {
+  letter-spacing: 0.04em;
+  border-top: 0;
+  padding-block: 20px;
+}
+.hero-bottom > span:nth-child(2) {
+  display: none;
+}
+.hero-carousel {
+  margin-top: 48px;
+}
+.nav {
+  height: 74px;
+  border-bottom: 0;
+}
+.nav nav {
+  gap: 30px;
+}
+.nav-contact {
+  border-color: #47513f;
+}
+.wrap {
+  max-width: 1120px;
+}
+.section {
+  padding-block: 88px;
+}
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.075em;
+  color: var(--muted);
+}
+.section h2 {
+  font-size: clamp(32px, 3.8vw, 49px);
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+}
+.section-heading {
+  margin-bottom: 34px;
+}
+.section-heading > p {
+  max-width: 360px;
+  line-height: 1.75;
+}
+.projects,
+.experience {
+  background: #0d110d;
+  border-block: 0;
+}
+.project-description {
+  gap: 50px;
+  margin-top: 30px;
+}
+.project-description h3 {
+  font-size: 29px;
+  letter-spacing: -0.025em;
+}
+.project-description p {
+  line-height: 1.8;
+}
+.project-proof strong {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text);
+}
+.project-description .project-proof {
+  margin-top: 18px;
+  color: var(--body);
+}
+.tags > span {
+  border: 0;
+  padding: 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+.tags {
+  gap: 7px 16px;
+}
+.project-tabs button {
+  font-size: 17px;
+  padding: 17px 18px;
+}
+.project-tabs button[aria-selected="true"] {
+  background: #182016;
+}
+.studio-band {
+  margin-top: 42px;
+  padding-block: 26px;
+  border-bottom: 0;
+}
+.studio-band h3 {
+  font-size: 28px;
+}
+.studio-band p {
+  font-size: 14px;
+}
+.career-grid {
+  gap: 64px;
+  grid-template-columns: 0.9fr 1.2fr;
+}
+.career-heading h2 {
+  font-size: 45px;
+}
+.career-heading p:not(.eyebrow) {
+  max-width: 380px;
+  line-height: 1.85;
+  font-size: 14px;
+}
+.career-portrait {
+  max-width: 340px;
+}
+.career-portrait figcaption {
+  display: none;
+}
+.job-company {
+  font-size: 25px;
+  letter-spacing: -0.025em;
+}
+.job-top {
+  margin-bottom: 12px;
+}
+.job {
+  padding-block: 27px;
+}
+.job ul {
+  margin-top: 20px;
+  line-height: 1.8;
+}
+.job-role {
+  color: var(--text);
+}
+.job-meta {
+  color: var(--muted);
+}
+.job-detail .tags {
+  display: none;
+}
+.skills-grid {
+  gap: 40px;
+}
+.skill h3 {
+  font-size: 25px;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  margin: 20px 0 14px;
+}
+.skill p {
+  min-height: 0;
+  line-height: 1.8;
+}
+.tool-list {
+  margin-top: 22px;
+  line-height: 1.9;
+}
+.learning {
+  background: #dfe7da;
+}
+.learning h2 {
+  color: #243d2c;
+}
+.learning .eyebrow {
+  color: #50604c;
+}
+.contact h2 {
+  font-size: clamp(36px, 4.5vw, 58px);
+}
+.contact {
+  padding-block: 86px;
+}
+.contact-portrait {
+  width: 64px;
+  height: 64px;
+}
+.contact .email-address {
+  font-size: 16px;
+}
+.button:hover {
+  transform: translateY(-1px);
+}
+.metrics-note {
+  font-size: 11px !important;
+}
+.creator-grid h3 {
+  font-size: 26px;
+}
+.creator-grid > article p {
+  line-height: 1.8;
+}
+@media (max-width: 700px) {
+  .hero {
+    padding-top: 44px;
+  }
+  .hero-lead {
+    font-size: 14px;
+  }
+  .hero-lead br {
+    display: none;
+  }
+  .hero-identity {
+    font-size: 8px;
+  }
+  .nav {
+    height: 66px;
+  }
+  .section {
+    padding-block: 62px;
+  }
+  .wrap {
+    padding-inline: 22px;
+  }
+  .section-heading {
+    margin-bottom: 28px;
+  }
+  .career-grid {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+  .career-heading h2 {
+    font-size: 36px;
+  }
+  .career-portrait {
+    max-width: 380px;
+  }
+  .project-description {
+    gap: 24px;
+  }
+  .project-description h3 {
+    font-size: 27px;
+  }
+  .skills-grid {
+    gap: 32px;
+  }
+  .studio-band p {
+    font-size: 13px;
+  }
+  .contact {
+    padding-block: 66px;
+  }
+}

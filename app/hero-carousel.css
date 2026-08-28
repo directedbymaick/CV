@@ -1,6 +1,240 @@
-.hero-carousel{max-width:1440px;margin:55px auto 0;position:relative;isolation:isolate}.carousel-stage{height:clamp(240px,31vw,425px);position:relative;perspective:1300px;touch-action:pan-y;user-select:none}.carousel-card{position:absolute;left:50%;top:0;width:56%;max-width:720px;transform-origin:center;transition:transform .85s cubic-bezier(.22,.75,.18,1),opacity .65s,filter .65s;will-change:transform;overflow:hidden;border:1px solid #586651;border-radius:8px;background:#141a14}.carousel-card.current{transform:translateX(-50%) rotateX(3deg);z-index:3;opacity:1}.carousel-card.previous{transform:translateX(-121%) translateY(45px) scale(.78) rotateY(15deg) rotateZ(-7deg);z-index:1;opacity:.55;filter:brightness(.75)}.carousel-card.next{transform:translateX(21%) translateY(45px) scale(.78) rotateY(-15deg) rotateZ(7deg);z-index:1;opacity:.55;filter:brightness(.75)}.carousel-card.previous:hover,.carousel-card.next:hover{opacity:.85;filter:brightness(1)}.carousel-card>a,.carousel-card>button{display:block;width:100%;padding:0;border:0;color:inherit;background:transparent;text-align:inherit;cursor:pointer}.carousel-card img{width:100%;height:auto;aspect-ratio:1.94;object-fit:cover;pointer-events:none}.carousel-window{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;gap:10px;color:#aac09e;background:#141a14;font:9px monospace;letter-spacing:.02em}.carousel-window>span:first-child{letter-spacing:2px;font-size:8px}.carousel-window>span:nth-child(2){overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.carousel-controls{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:#151c14;border:1px solid #34462d;border-radius:999px;padding:5px 8px;position:relative;z-index:4}.carousel-controls button{display:grid;place-items:center;border:0;background:transparent;color:#d3edc9;min-width:36px;height:36px;border-radius:50%;padding:0;transition:background .2s}.carousel-controls button:hover{background:#2e3e27}.carousel-arrow{font-size:20px}.carousel-dots{display:flex;align-items:center}.carousel-dots button{min-width:26px;width:26px}.carousel-dots span{display:block;width:5px;height:5px;background:#78936c;border-radius:999px;transition:width .3s,background .3s}.carousel-dots button[aria-current=true] span{width:18px;background:var(--lime)}.carousel-divider{width:1px;height:16px;background:#405238;margin:0 2px}.carousel-play{font-size:16px}.carousel-play:disabled{opacity:.4;cursor:default}.carousel-caption{font-size:10px;letter-spacing:.03em;color:#b4cbaa;margin:15px 16px 24px}.carousel-caption span{font-size:9px;color:#819777;margin:0 7px}.quiet .carousel-card{transition:none}.carousel-card>a:focus-visible,.carousel-card>button:focus-visible{outline-offset:-4px;outline:2px solid var(--lime)}
-@media(max-width:700px){.hero-carousel{margin-top:40px}.carousel-stage{height:clamp(185px,50vw,325px)}.carousel-card{width:82%}.carousel-card.previous{transform:translateX(-105%) translateY(23px) scale(.78) rotateY(15deg) rotateZ(-7deg)}.carousel-card.next{transform:translateX(5%) translateY(23px) scale(.78) rotateY(-15deg) rotateZ(7deg)}.carousel-window{font-size:7px;padding:7px 10px}.carousel-window>span:first-child{font-size:6px}.carousel-caption{font-size:9px;margin-bottom:20px}.carousel-caption span{font-size:8px}.carousel-controls{padding:3px 7px}.carousel-controls button{min-height:38px}}
-@media(prefers-reduced-motion:reduce){.carousel-card,.carousel-dots span{transition:none}}@media print{.hero-carousel{display:none}}
+.hero-carousel {
+  max-width: 1440px;
+  margin: 55px auto 0;
+  position: relative;
+  isolation: isolate;
+}
+.carousel-stage {
+  height: clamp(240px, 31vw, 425px);
+  position: relative;
+  perspective: 1300px;
+  touch-action: pan-y;
+  user-select: none;
+}
+.carousel-card {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 56%;
+  max-width: 720px;
+  transform-origin: center;
+  transition:
+    transform 0.85s cubic-bezier(0.22, 0.75, 0.18, 1),
+    opacity 0.65s,
+    filter 0.65s;
+  will-change: transform;
+  overflow: hidden;
+  border: 1px solid #586651;
+  border-radius: 8px;
+  background: #141a14;
+}
+.carousel-card.current {
+  transform: translateX(-50%) rotateX(3deg);
+  z-index: 3;
+  opacity: 1;
+}
+.carousel-card.previous {
+  transform: translateX(-121%) translateY(45px) scale(0.78) rotateY(15deg)
+    rotateZ(-7deg);
+  z-index: 1;
+  opacity: 0.55;
+  filter: brightness(0.75);
+}
+.carousel-card.next {
+  transform: translateX(21%) translateY(45px) scale(0.78) rotateY(-15deg)
+    rotateZ(7deg);
+  z-index: 1;
+  opacity: 0.55;
+  filter: brightness(0.75);
+}
+.carousel-card.previous:hover,
+.carousel-card.next:hover {
+  opacity: 0.85;
+  filter: brightness(1);
+}
+.carousel-card > a,
+.carousel-card > button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  text-align: inherit;
+  cursor: pointer;
+}
+.carousel-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1.94;
+  object-fit: cover;
+  pointer-events: none;
+}
+.carousel-window {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  gap: 10px;
+  color: #aac09e;
+  background: #141a14;
+  font: 9px monospace;
+  letter-spacing: 0.02em;
+}
+.carousel-window > span:first-child {
+  letter-spacing: 2px;
+  font-size: 8px;
+}
+.carousel-window > span:nth-child(2) {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.carousel-controls {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  background: #151c14;
+  border: 1px solid #34462d;
+  border-radius: 999px;
+  padding: 5px 8px;
+  position: relative;
+  z-index: 4;
+}
+.carousel-controls button {
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  color: #d3edc9;
+  min-width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  padding: 0;
+  transition: background 0.2s;
+}
+.carousel-controls button:hover {
+  background: #2e3e27;
+}
+.carousel-arrow {
+  font-size: 20px;
+}
+.carousel-dots {
+  display: flex;
+  align-items: center;
+}
+.carousel-dots button {
+  min-width: 26px;
+  width: 26px;
+}
+.carousel-dots span {
+  display: block;
+  width: 5px;
+  height: 5px;
+  background: #78936c;
+  border-radius: 999px;
+  transition:
+    width 0.3s,
+    background 0.3s;
+}
+.carousel-dots button[aria-current="true"] span {
+  width: 18px;
+  background: var(--lime);
+}
+.carousel-divider {
+  width: 1px;
+  height: 16px;
+  background: #405238;
+  margin: 0 2px;
+}
+.carousel-play {
+  font-size: 16px;
+}
+.carousel-play:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.carousel-caption {
+  font-size: 10px;
+  letter-spacing: 0.03em;
+  color: #b4cbaa;
+  margin: 15px 16px 24px;
+}
+.carousel-caption span {
+  font-size: 9px;
+  color: #819777;
+  margin: 0 7px;
+}
+.quiet .carousel-card {
+  transition: none;
+}
+.carousel-card > a:focus-visible,
+.carousel-card > button:focus-visible {
+  outline-offset: -4px;
+  outline: 2px solid var(--lime);
+}
+@media (max-width: 700px) {
+  .hero-carousel {
+    margin-top: 40px;
+  }
+  .carousel-stage {
+    height: clamp(185px, 50vw, 325px);
+  }
+  .carousel-card {
+    width: 82%;
+  }
+  .carousel-card.previous {
+    transform: translateX(-105%) translateY(23px) scale(0.78) rotateY(15deg)
+      rotateZ(-7deg);
+  }
+  .carousel-card.next {
+    transform: translateX(5%) translateY(23px) scale(0.78) rotateY(-15deg)
+      rotateZ(7deg);
+  }
+  .carousel-window {
+    font-size: 7px;
+    padding: 7px 10px;
+  }
+  .carousel-window > span:first-child {
+    font-size: 6px;
+  }
+  .carousel-caption {
+    font-size: 9px;
+    margin-bottom: 20px;
+  }
+  .carousel-caption span {
+    font-size: 8px;
+  }
+  .carousel-controls {
+    padding: 3px 7px;
+  }
+  .carousel-controls button {
+    min-height: 38px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .carousel-card,
+  .carousel-dots span {
+    transition: none;
+  }
+}
+@media print {
+  .hero-carousel {
+    display: none;
+  }
+}
 
-.carousel-stage{cursor:grab}.carousel-stage.dragging{cursor:grabbing}.carousel-card>a,.carousel-card>button{cursor:inherit}.carousel-stage.dragging .carousel-card{transition:none}
-
+.carousel-stage {
+  cursor: grab;
+}
+.carousel-stage.dragging {
+  cursor: grabbing;
+}
+.carousel-card > a,
+.carousel-card > button {
+  cursor: inherit;
+}
+.carousel-stage.dragging .carousel-card {
+  transition: none;
+}
