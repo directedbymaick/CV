@@ -1,18 +1,19 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
+export const viewport: Viewport = { themeColor: "#0c0c0a", colorScheme: "dark" };
 const origin = process.env.SITE_ORIGIN;
 export const metadata: Metadata = {
-  title: "Rayan Mpondo — Marketing digital & création web",
+  title: "Rayan Mpondo — Marketing digital B2B, création web & IA",
   description:
-    "Stratégie marketing, expériences web et création de contenu. Découvrez le parcours et les réalisations de Rayan Mpondo.",
+    "Marketing digital B2B, création web et IA pour les PME et ETI de l’industrie et de la construction. Parcours, projets et contact de Rayan Mpondo.",
   icons: { icon: "/media/rayan-icon.png" },
   ...(origin
     ? { metadataBase: new URL(origin), alternates: { canonical: "/" } }
     : {}),
   openGraph: {
-    title: "Rayan Mpondo — Marketing digital & création web",
+    title: "Rayan Mpondo — Marketing digital B2B, création web & IA",
     description:
-      "De la stratégie à l’expérience. Parcours, projets web et création de contenu.",
+      "Marketing digital B2B, sites web et IA pour les PME et ETI. Parcours, projets et contact.",
     locale: "fr_FR",
     type: "website",
     ...(origin
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rayan Mpondo — Marketing digital & création web",
+    title: "Rayan Mpondo — Marketing digital B2B, création web & IA",
     ...(origin ? { images: [`${origin}/og.png`] } : {}),
   },
 };
@@ -38,8 +39,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Rayan Mpondo",
-  jobTitle: "Chargé de marketing digital",
-  description: "Marketing digital, création web et production de contenus.",
+  jobTitle: "Marketing digital B2B, création web & IA",
+  description: "Marketing digital B2B, création web et IA pour les PME et ETI de l’industrie et de la construction.",
   email: "mailto:rayan.mpondo@gmail.com",
   telephone: "+33766039808",
   address: {
@@ -56,10 +57,13 @@ const jsonLd = {
     "https://www.mad-makers.fr",
   ],
   knowsAbout: [
-    "Marketing digital",
+    "Marketing digital B2B",
     "Création de contenu",
-    "Conception web",
+    "Conception et développement web",
+    "SEO technique",
+    "Accessibilité web",
     "Intelligence artificielle générative",
+    "Automatisation marketing",
   ],
 };
 export default function RootLayout({
@@ -79,7 +83,15 @@ export default function RootLayout({
         <link
           rel="stylesheet"
           precedence="default"
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600&family=Space+Grotesk:wght@400;500;600&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=JetBrains+Mono:wght@400;500&display=swap"
+        />
+        <link
+          rel="preload"
+          as="image"
+          type="image/avif"
+          href="/media/rayan-still-1254.avif"
+          imageSrcSet="/media/rayan-still-800.avif 800w, /media/rayan-still-1254.avif 1254w"
+          imageSizes="(max-width: 820px) 100vw, 46vw"
         />
         <script
           type="application/ld+json"

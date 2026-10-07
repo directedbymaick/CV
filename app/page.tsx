@@ -1,6 +1,5 @@
 import CV from "./cv";
-import "./sections.css";
-import "./refinement.css";
+import "./film.css";
 export default function Home() {
   return <CV />;
 }
